@@ -1,0 +1,78 @@
+%% PAGE FORMAT SETTINGS
+
+% Sets paper size and margins
+\geometry{
+    paper           = a4paper,
+    left            = 50pt,
+    right           = 50pt,
+    top             = 30pt,
+    bottom          = 50pt,
+    headsep         = 0pt,
+    headheight      = 0pt, % no header
+    marginparsep    = 0pt,
+    marginparwidth  = 0pt, % no marginal note
+    footskip        = 30pt
+}
+
+% Removes indentation of the first line of new paragraph
+\setlength{\parindent}{0pt}
+
+% Sets spacing between paragraphs
+\setlength{\parskip}{10pt plus2pt}
+
+% Chapter format
+\titleformat{\chapter}
+    [block]
+    {\sffamily \scshape \bfseries \Huge}
+    {}           % label is defined here (chapter text and number are removed)
+    {0ex}        % horizontal separation between label and title body
+    {\centering} % code preceding the title body
+    []           % code following the title body
+
+% Section format
+\titleformat{\section}
+    [block]
+    {\productsans \bfseries \Large}
+    {}    % label is defined here (section text and number are removed)
+    {0ex} % horizontal separation between label and title body
+    {}    % code preceding the title body
+    []    % code following the title body
+
+% Subsection format
+\titleformat{\subsection}
+    [block]
+    {\productsans \bfseries \large}
+    {}    % label is defined here (section text and number are removed)
+    {0ex} % horizontal separation between label and title body
+    {}    % code preceding the title body
+    []    % code following the title body
+
+% Chapter spacing
+\titlespacing*{\chapter}
+              {0pt}             % left spacing
+              {-30pt}           % top spacing
+              {20pt plus-10pt}  % bottom spacing
+
+% Section spacing
+\titlespacing*{\section}
+              {0pt}  % left spacing
+              {10pt} % top spacing
+              {0pt}  % bottom spacing
+
+% Subsection spacing
+\titlespacing*{\subsection}
+              {0pt} % left spacing
+              {0pt} % top spacing
+              {0pt} % bottom spacing
+
+% Subsubsection spacing
+\titlespacing*{\subsubsection}
+              {0pt} % left spacing
+              {0pt} % top spacing
+              {0pt} % bottom spacing
+
+% Hyperlinks and PDF title
+\hypersetup{
+    linktoc  = all,
+    pdftitle = {Note}
+}

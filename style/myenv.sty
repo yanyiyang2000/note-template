@@ -1,0 +1,157 @@
+%% ENVIRONMENT AND BOX DEFINITIONS
+
+\usepackage{./style/mycolor} % provides myXXXX colors
+
+\tcbuselibrary{many}
+
+% Term environment
+\newtcolorbox{term}[1][Term]{           % one argument
+    left           = 2mm,               % left margin
+    top            = 2mm,               % top margin
+    colframe       = myPurple!75!black, % frame color
+    colback        = myPurple!10!white, % background color
+    title          = {\large #1},       % controlled by argument, default is Term
+    parbox         = false,             % enables paragraph spacing
+    ignore nobreak = true,              % prevents unnecessary page break
+    breakable      = true,              
+    skin           = enhanced jigsaw,
+}
+
+
+% Example environment
+\newtcolorbox{example}{
+    left           = 2mm,               % left margin
+    top            = 2mm,               % top margin
+    colframe       = myOrange!85!black, % frame color
+    colback        = myOrange!10!white, % background color
+    title          = {\large Example},
+    parbox         = false,             % enables paragraph spacing
+    ignore nobreak = true,              % prevents unnecessary page break
+    breakable      = true,
+    skin           = enhanced jigsaw
+}
+
+
+% Solution environment
+\newtcolorbox{solution}{
+    left           = 2mm,              % left margin
+    top            = 2mm,              % top margin
+    colframe       = myGreen!85!black, % frame color
+    colback        = myGreen!10!white, % background color
+    title          = {\large Solution},
+    parbox         = false,            % enables paragraph spacing
+    ignore nobreak = true,             % prevents unnecessary page break
+    breakable      = true,
+    skin           = enhanced jigsaw
+}
+
+
+% Definition box
+\newcommand*{\definition}[1][40]{ % one argument
+    \tcboxmath[
+        capture   = minipage, % fixed width
+        halign    = center,   % horizontal alignment
+        left      = 0mm,      % left margin
+        right     = 0mm,      % right margin
+        width     = #1mm,     % controlled by argument, default is 40
+        arc       = 3pt,      % radian of frame arcs
+        boxrule   = 1pt,      % frame width
+        colframe  = myBlue!85!black,
+        colback   = myBlue!10!white,
+        fonttitle = {\scriptsize}, 
+        title     = Definition]
+        % Suggested width are 40, 60, 80 and 120mm
+}
+
+% Corollary box
+\newcommand*{\corollary}[1][40]{ % one argument
+    \tcboxmath[
+        capture   = minipage, % fixed width
+        halign    = center,   % horizontal alignment
+        left      = 0mm,      % left margin
+        right     = 0mm,      % right margin
+        width     = #1mm,     % controlled by argument, default is 40
+        arc       = 3pt,      % radian of frame arcs
+        boxrule   = 1pt,      % frame width
+        colframe  = myBlue!85!black,
+        colback   = myBlue!10!white,
+        fonttitle = {\scriptsize}, 
+        title     = Corollary
+        % Suggested width are 40, 60, 80 and 120mm
+    ]
+}
+
+
+\NewEnviron{mytable}{
+    \begin{table}[h]
+        \arrayrulecolor{myBlue}
+        \renewcommand{\arraystretch}{2}
+        \centering
+        \tcbox[
+            left     = 0mm,
+            right    = 0mm,
+            top      = 0mm,
+            bottom   = 0mm,
+            boxsep   = 0mm,
+            colframe = myBlue,
+            colback  = myBlue!10!white,
+        ]{
+            \BODY
+        }
+    \end{table}
+}
+
+
+% Code environment
+\lstdefinestyle{light}{
+    backgroundcolor = \color{myCyan!10!white},
+    basicstyle      = \ttfamily,
+    numbers         = left,
+    numberstyle     = \tiny,
+    numbersep       = 5pt,
+    keywordstyle    = \bfseries\color{myBlue},
+    identifierstyle = \bfseries\color{myIndigo},
+    commentstyle    = \color{myPurple}
+}
+
+\lstnewenvironment{code}[1][C]
+{\lstset{language=#1, style=light, autogobble=true}} 
+% code goes here
+{}
+
+
+
+
+% MIPS code definition
+\lstdefinelanguage{MIPS}{
+    alsoletter = {.\$},
+    morestring = [b]",
+    morestring = [b]',
+    morecomment = [l]\#,
+    % Instructions
+    morekeywords = {
+        [1]
+        sw, lw,
+        addi, addu, subi, subu,
+        j, jal,
+    },  
+    % Assembler directives
+    morekeywords = {
+        [2]
+        .data, .text, .kdata, .ktext,
+        .globl, .extern,
+        .byte, .half, .word, .float, .double, .space,
+        .ascii, .asciiz,
+    },
+    % Register names
+    morekeywords = {
+        [3]
+        \$zero, \$at,
+        \$v0, \$v1,
+        \$a0, \$a1, \$a2, \$a3,
+        \$t0, \$t1, \$t2, \$t3, \$t4, \$t5, \$t6, \$t7, \$t8, \$t9,
+        \$s0, \$s1, \$s2, \$s3, \$s4, \$s5, \$s6, \$s7,
+        \$k0, \$k1,
+        \$gp, \$sp, \$fp, \$ra
+    },
+}[strings,comments,keywords]

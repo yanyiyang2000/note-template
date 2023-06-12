@@ -1,0 +1,57 @@
+%% FONTS SETTINGS
+
+% Sets serif font family, affects \rmfamily
+\setmainfont[
+    Path           = ./fonts/roman/,
+    Extension      = .otf,
+    UprightFont    = *-Regular,       % affects \upshape, \mdseries
+    BoldFont       = *-Bold,          % affects \upshape, \bfseries
+    ItalicFont     = *-RegularItalic, % affects \itshape, \mdseries
+    BoldItalicFont = *-BoldItalic,    % affects \itshape, \bfseries
+]{NewYorkMedium} % Apple New York Medium
+
+
+% Sets sans-serif font family, affects \sffamily
+\setsansfont[
+    Path           = ./fonts/sans-serif/,
+    Extension      = .otf,
+    UprightFont    = *-Regular,       % affects \upshape, \mdseries
+    BoldFont       = *-Bold,          % affects \upshape, \bfseries
+    ItalicFont     = *-RegularItalic, % affects \itshape, \mdseries
+    BoldItalicFont = *-BoldItalic,    % affects \itshape, \bfseries
+]{SFProText} % Apple San Francisco Pro Text
+
+
+% Sets monospaced font family, affects \ttfamily
+\setmonofont[
+    Path           = ./fonts/mono/,
+    Extension      = .otf,
+    UprightFont    = *-Regular,       % affects \upshape, \mdseries
+    BoldFont       = *-Bold,          % affects \upshape, \bfseries
+    ItalicFont     = *-RegularItalic, % affects \itshape, \mdseries
+    BoldItalicFont = *-BoldItalic,    % affects \itshape, \bfseries
+]{SFMono} % Apple San Francisco Mono
+
+
+% Sets math font family
+% \setmathfont{Asana Math} % alternative math font here
+
+% NOTE: STIX two math font has spacing problems with subscripts
+\setmathfont[
+    Path      = ./fonts/math/,
+    Extension = .otf
+]{STIXTwoMath-Regular}
+
+
+% Sets a new sans serif font family
+% First registers the font
+\defaultfontfeatures[ProductSans]{ % Google Product Sans
+    Path           = ./fonts/sans-serif/,
+    Extension      = .ttf,
+    UprightFont    = *-Regular,       % affects \upshape, \mdseries
+    BoldFont       = *-Bold,          % affects \upshape, \bfseries
+    ItalicFont     = *-RegularItalic, % affects \itshape, \mdseries
+    BoldItalicFont = *-BoldItalic,    % affects \itshape, \bfseries
+}
+% Then defines new font family called productsans
+\newfontfamily\productsans{ProductSans}

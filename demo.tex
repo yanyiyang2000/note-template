@@ -1,0 +1,65 @@
+\chapter{Demo}
+
+\section{Document Structure}
+
+\subsection{Folders}
+\begin{mytable}
+    \begin{tabular}{ll}
+        \textbf{Name} & \textbf{Comment} \\
+        \hline
+        \texttt{notes}       & folder storing notes \\
+        \texttt{figures}     & folder storing regular figures \\
+        \texttt{fonts}       & folder storing fonts used in notes \\
+        \texttt{style}       & folder storing format control files \\
+        \texttt{tikz}        & folder storing TikZ figure source code
+    \end{tabular}
+\end{mytable}
+
+
+
+\subsection{Format Control Files}
+\begin{mytable}
+    \begin{tabular}{ll}
+        \textbf{Name} & \textbf{Comment} \\
+        \hline
+        \texttt{mycolor.sty} & document defining colors \\
+        \texttt{myenv.sty}   & document defining environments \\
+        \texttt{myfont.sty}  & document defining fonts \\
+        \texttt{mypage.sty}  & document defining page format \\
+        \texttt{note.cls}    & document defining note class
+    \end{tabular}
+\end{mytable}
+
+
+\section{Example}
+\begin{term}[\hypertarget{ref_demo}{Euler's Formula}]
+    \textbf{Euler's formula} is given as
+    \begin{equation}
+        \definition{\cos\theta + j\sin\theta = e^{j\theta}}
+        \label{def_demo}
+    \end{equation}
+    Where
+    \begin{alignat*}{2}
+        &j\ &&\text{--- Imaginary unit}
+    \end{alignat*}
+
+    Since
+    \[ e^{-j\theta} = \cos(-\theta) + j\sin(-\theta) = \cos\theta - j\sin\theta \]
+    
+    Hence
+    \begin{equation}
+        \corollary{\cos\theta = \frac{e^{\, j\theta} + e^{-j\theta}}{2}}
+        \label{cor_demo}
+    \end{equation}
+\end{term}
+
+
+\begin{example}
+    % example goes here
+    \hyperlink{ref_demo}{Euler's formula} is described by equation \ref{def_demo}.
+\end{example}
+
+
+\begin{solution}
+    % solution goes here
+\end{solution}
