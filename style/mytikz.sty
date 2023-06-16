@@ -1,8 +1,10 @@
-%% FONTS SETTINGS
+%% SETTINGS FOR TIKZ FIGURES ONLY
+\usepackage{unicode-math}
+\usepackage{Xcolor}
 
 % Sets serif font family, affects \rmfamily
 \setmainfont[
-    Path           = ./fonts/roman/,
+    Path           = ../fonts/roman/,
     Extension      = .otf,
     UprightFont    = *-Regular,       % affects \upshape, \mdseries
     BoldFont       = *-Bold,          % affects \upshape, \bfseries
@@ -13,7 +15,7 @@
 
 % Sets sans-serif font family, affects \sffamily
 \setsansfont[
-    Path           = ./fonts/sans-serif/,
+    Path           = ../fonts/sans-serif/,
     Extension      = .otf,
     UprightFont    = *-Regular,       % affects \upshape, \mdseries
     BoldFont       = *-Bold,          % affects \upshape, \bfseries
@@ -24,7 +26,7 @@
 
 % Sets monospaced font family, affects \ttfamily
 \setmonofont[
-    Path           = ./fonts/mono/,
+    Path           = ../fonts/mono/,
     Extension      = .otf,
     UprightFont    = *-Regular,       % affects \upshape, \mdseries
     BoldFont       = *-Bold,          % affects \upshape, \bfseries
@@ -34,27 +36,17 @@
 
 
 % Sets math font family
-% \setmathfont{Asana Math} % alternative math font here
-
-% NOTE: STIX two math font has spacing problems with subscripts
 \setmathfont[
-    Path      = ./fonts/math/,
+    Path      = ../fonts/math/,
     Extension = .otf
 ]{STIXTwoMath-Regular}
 
-
-% Sets a new sans serif font family
-% First registers the font
-\defaultfontfeatures[ProductSans]{ % Google Product Sans
-    Path           = ./fonts/sans-serif/,
-    Extension      = .ttf,
-    UprightFont    = *-Regular,       % affects \upshape, \mdseries
-    BoldFont       = *-Bold,          % affects \upshape, \bfseries
-    ItalicFont     = *-RegularItalic, % affects \itshape, \mdseries
-    BoldItalicFont = *-BoldItalic,    % affects \itshape, \bfseries
-}
-% Then defines new font family called productsans
-\newfontfamily\productsans{ProductSans}
-
-% Sets sans serif the default font family
-\renewcommand{\familydefault}{\sfdefault}
+% Sets colors (from mycolor.sty)
+\definecolor{myOrange}{RGB}{255, 149, 0}
+\definecolor{myYellow}{RGB}{255, 230, 32}
+\definecolor{myGreen}{RGB}{4, 222, 113}
+\definecolor{myCyan}{RGB}{90, 200, 250}
+\definecolor{myBlue}{RGB}{32, 148, 250}
+\definecolor{myIndigo}{RGB}{120, 122, 255}
+\definecolor{myPurple}{RGB}{191, 90, 242}
+\definecolor{myGrey}{RGB}{155, 160, 170}

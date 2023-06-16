@@ -1,21 +1,28 @@
+\documentclass{note}
+% \WarningsOff*          % Suppresses warnings
+% \usepackage{showframe} % Shows frame for testing
+
+
+
+
+\begin{document}
+
 \chapter{Demo}
 
-\section{Document Structure}
+\section{File Structure}
 
 \subsection{Folders}
 \begin{mytable}
     \begin{tabular}{ll}
         \textbf{Name} & \textbf{Comment} \\
         \hline
-        \texttt{notes}       & folder storing notes \\
-        \texttt{figures}     & folder storing regular figures \\
-        \texttt{fonts}       & folder storing fonts used in notes \\
-        \texttt{style}       & folder storing format control files \\
-        \texttt{tikz}        & folder storing TikZ figure source code
+        \texttt{notes}   & folder storing notes \\
+        \texttt{figures} & folder storing figures \\
+        \texttt{fonts}   & folder storing fonts \\
+        \texttt{style}   & folder storing format control files \\
+        \texttt{tikz}    & folder storing TikZ figure source code
     \end{tabular}
 \end{mytable}
-
-
 
 \subsection{Format Control Files}
 \begin{mytable}
@@ -25,18 +32,18 @@
         \texttt{mycolor.sty} & document defining colors \\
         \texttt{myenv.sty}   & document defining environments \\
         \texttt{myfont.sty}  & document defining fonts \\
-        \texttt{mypage.sty}  & document defining page format \\
+        \texttt{mypage.sty}  & document defining page style \\
+        \texttt{mytikz.sty}  & document defining TikZ style \\
         \texttt{note.cls}    & document defining note class
     \end{tabular}
 \end{mytable}
 
-
 \section{Example}
 \begin{term}[\hypertarget{ref_demo}{Euler's Formula}]
-    \textbf{Euler's formula} is given as
+    \emph{Euler's formula} is given as
     \begin{equation}
         \definition{\cos\theta + j\sin\theta = e^{j\theta}}
-        \label{def_demo}
+        \label{example_def}
     \end{equation}
     Where
     \begin{alignat*}{2}
@@ -49,17 +56,17 @@
     Hence
     \begin{equation}
         \corollary{\cos\theta = \frac{e^{\, j\theta} + e^{-j\theta}}{2}}
-        \label{cor_demo}
+        \label{example_property}
     \end{equation}
 \end{term}
 
-
 \begin{example}
     % example goes here
-    \hyperlink{ref_demo}{Euler's formula} is described by equation \ref{def_demo}.
+    \keyword{ref_demo}{Euler's formula} is described by equation \ref{example_def}.
 \end{example}
-
 
 \begin{solution}
     % solution goes here
 \end{solution}
+
+\end{document}
