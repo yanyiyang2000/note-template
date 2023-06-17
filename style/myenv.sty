@@ -1,8 +1,13 @@
 %% ENVIRONMENT AND BOX DEFINITIONS
-
-\usepackage{./style/mycolor} % provides myXXXX colors
+\RequirePackage{tcolorbox}       % provides tcolorbox, tcbox environments
+\RequirePackage{environ}         % provides \NewEnviron
+\RequirePackage{colortbl}        % provides \arrayrulecolor
+\RequirePackage{listings}        % provides lstlisting environment
+\RequirePackage{lstautogobble}   % provides autogobble for lstlisting
+\RequirePackage{./style/mycolor} % provides myXXXX colors
 
 \tcbuselibrary{many}
+
 
 % Term environment
 \newtcolorbox{term}[1][Term]{           % one argument
@@ -84,6 +89,7 @@
 }
 
 
+% Table environment
 \NewEnviron{mytable}{
     \begin{table}[h]
         \arrayrulecolor{myBlue}

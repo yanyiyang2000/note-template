@@ -1,4 +1,5 @@
 %% FONTS SETTINGS
+\RequirePackage{unicode-math} % provides \setXXXXfont
 
 % Sets serif font family, affects \rmfamily
 \setmainfont[
@@ -34,13 +35,13 @@
 
 
 % Sets math font family
-% \setmathfont{Asana Math} % alternative math font here
-
-% NOTE: STIX two math font has spacing problems with subscripts
 \setmathfont[
     Path      = ./fonts/math/,
     Extension = .otf
 ]{STIXTwoMath-Regular}
+% NOTE: STIX two math font has spacing problems with subscripts
+% Uncomment to use alternative math font
+%\setmathfont{Asana Math}
 
 
 % Sets a new sans serif font family
@@ -53,7 +54,8 @@
     ItalicFont     = *-RegularItalic, % affects \itshape, \mdseries
     BoldItalicFont = *-BoldItalic,    % affects \itshape, \bfseries
 }
-% Then defines new font family called productsans
+
+% Defines new font family called productsans
 \newfontfamily\productsans{ProductSans}
 
 % Sets sans serif the default font family

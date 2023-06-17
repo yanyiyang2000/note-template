@@ -1,4 +1,10 @@
 %% PAGE FORMAT SETTINGS
+\RequirePackage{geometry}         % provides \geometry
+\RequirePackage{titlesec}         % provides \titleformat
+\RequirePackage{hyperref}         % provides \hyperXXXX
+\RequirePackage[bottom]{footmisc} % positions footnote at bottome of page
+\RequirePackage{./style/myfont}   % provides fonts
+
 
 % Sets paper size and margins
 \geometry{
@@ -14,11 +20,14 @@
     footskip        = 30pt
 }
 
+
 % Removes indentation of the first line of new paragraph
 \setlength{\parindent}{0pt}
 
+
 % Sets spacing between paragraphs
 \setlength{\parskip}{10pt plus2pt}
+
 
 % Chapter format
 \titleformat{\chapter}
@@ -29,6 +38,7 @@
     {\centering} % code preceding the title body
     []           % code following the title body
 
+
 % Section format
 \titleformat{\section}
     [block]
@@ -37,6 +47,7 @@
     {0ex} % horizontal separation between label and title body
     {}    % code preceding the title body
     []    % code following the title body
+
 
 % Subsection format
 \titleformat{\subsection}
@@ -47,11 +58,13 @@
     {}    % code preceding the title body
     []    % code following the title body
 
+
 % Chapter spacing
 \titlespacing*{\chapter}
               {0pt}             % left spacing
               {-30pt}           % top spacing
               {20pt plus-10pt}  % bottom spacing
+
 
 % Section spacing
 \titlespacing*{\section}
@@ -59,17 +72,20 @@
               {10pt} % top spacing
               {0pt}  % bottom spacing
 
+
 % Subsection spacing
 \titlespacing*{\subsection}
               {0pt} % left spacing
               {0pt} % top spacing
               {0pt} % bottom spacing
 
+
 % Subsubsection spacing
 \titlespacing*{\subsubsection}
               {0pt} % left spacing
               {0pt} % top spacing
               {0pt} % bottom spacing
+
 
 % Hyperlinks and PDF title
 \hypersetup{
